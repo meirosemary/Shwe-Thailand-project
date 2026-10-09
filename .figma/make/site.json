@@ -1,0 +1,10 @@
+{
+  "description": "Showcase three product categories—salt, coconut milk, and charcoal—on a compact, user-friendly website designed for easy navigation and information access.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

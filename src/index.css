@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;600;700;800&family=Noto+Sans+Myanmar:wght@400;600;700;800&family=Noto+Sans+Thai:wght@400;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", sans-serif;
+  --font-display: "DM Serif Display", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f4ecdf;
+}
+
+html[lang="my"] body,
+html[lang="my"] .font-display {
+  font-family: "Noto Sans Myanmar", sans-serif;
+}
+
+html[lang="th"] body,
+html[lang="th"] .font-display {
+  font-family: "Noto Sans Thai", sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #f4c95d;
+  color: #10263f;
+}
