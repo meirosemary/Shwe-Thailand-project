@@ -695,24 +695,23 @@ export default function App() {
 
   return (
     <main className="min-h-screen bg-[#f4ecdf] text-[#10263f]">
-      {/* Navigation Bar matching the exact Figma Make aesthetic */}
+      {/* Navigation Bar */}
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
         <a href="#" className="flex items-center gap-3.5" aria-label="Shwe Thailand home">
-          {/* Circular Emblem with Leaf Icon / Logo Image */}
+          {/* Logo container: renders logo.png if present, otherwise displays the circular leaf emblem */}
           <div className="flex size-10 items-center justify-center overflow-hidden rounded-full bg-[#112a46] text-[#f4c95d] shadow-sm">
             <img
               src="/logo.png"
               alt="Shwe Thailand Logo"
-              className="h-7 w-7 object-contain"
+              className="h-8 w-8 object-contain"
               onError={(e) => {
-                // If logo.png isn't available yet, fallback to the elegant leaf icon
                 e.currentTarget.style.display = "none";
-                const fallback = e.currentTarget.parentElement?.querySelector(".fallback-icon");
+                const fallback = e.currentTarget.parentElement?.querySelector(".fallback-brand-icon");
                 if (fallback) (fallback as HTMLElement).style.display = "block";
               }}
             />
             <svg
-              className="fallback-icon hidden size-5"
+              className="fallback-brand-icon hidden size-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -779,7 +778,7 @@ export default function App() {
         </div>
       </nav>
 
-      {/* Hero Header with Comfortable Line Spacing */}
+      {/* Hero Header */}
       <header className="mx-auto grid max-w-7xl gap-8 px-5 pb-16 pt-10 sm:px-8 md:grid-cols-[1.05fr_.95fr] md:items-end md:pt-16 lg:px-10 lg:pb-20">
         <div>
           <p className="mb-5 flex items-center gap-3 text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#b1832f]">
@@ -1164,7 +1163,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Direct Contact Section */}
+      {/* Direct Bulk Contact Section */}
       <section id="contact" className="bg-[#112a46] text-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-10">
           <div>
