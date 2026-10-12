@@ -443,7 +443,6 @@ function ProductCard({
         <h3 className="font-display text-[2rem] leading-tight sm:text-[2.35rem]">
           {product.name}
         </h3>
-        {/* Adjusted relaxed line spacing for product description */}
         <p className="mt-3 text-sm leading-relaxed text-slate-200 opacity-90">{product.description}</p>
         <div className="mt-5 grid grid-rows-[1fr]">
           <div className="overflow-hidden">
@@ -696,30 +695,37 @@ export default function App() {
 
   return (
     <main className="min-h-screen bg-[#f4ecdf] text-[#10263f]">
-      {/* Navigation Bar with Logo Image and Clean Line Spacing */}
+      {/* Navigation Bar matching the exact Figma Make aesthetic */}
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
         <a href="#" className="flex items-center gap-3.5" aria-label="Shwe Thailand home">
-          <div className="relative flex size-10 items-center justify-center overflow-hidden rounded-xl bg-[#112a46] shadow-sm">
+          {/* Circular Emblem with Leaf Icon / Logo Image */}
+          <div className="flex size-10 items-center justify-center overflow-hidden rounded-full bg-[#112a46] text-[#f4c95d] shadow-sm">
             <img
               src="/logo.png"
-              alt="Shwe (Thailand) Co., Ltd. Logo"
-              className="h-8 w-8 object-contain"
+              alt="Shwe Thailand Logo"
+              className="h-7 w-7 object-contain"
               onError={(e) => {
-                // Graceful fallback to branded letter icon if logo.png hasn't been uploaded yet
+                // If logo.png isn't available yet, fallback to the elegant leaf icon
                 e.currentTarget.style.display = "none";
-                e.currentTarget.parentElement!.innerHTML = '<span class="font-extrabold text-amber-400 text-lg">S</span>';
+                const fallback = e.currentTarget.parentElement?.querySelector(".fallback-icon");
+                if (fallback) (fallback as HTMLElement).style.display = "block";
               }}
             />
+            <svg
+              className="fallback-icon hidden size-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              strokeWidth="1.8"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 21V9m0 4c-4.5 0-7-2.5-7-7 4.5 0 7 2.5 7 7Zm0 3c4.5 0 7-2.5 7-7-4.5 0-7 2.5-7 7Z" />
+            </svg>
           </div>
-          <div className="flex flex-col">
-            <span className="text-sm font-extrabold uppercase tracking-[0.16em] text-[#112a46] leading-snug">
-              Shwe Thailand
-            </span>
-            <span className="text-[10px] font-semibold tracking-wide text-[#657080] leading-none">
-              Commercial Export Portal
-            </span>
-          </div>
+          <span className="text-sm font-extrabold uppercase tracking-[0.18em] text-[#112a46]">
+            SHWE THAILAND
+          </span>
         </a>
+
         <div className="hidden items-center gap-8 text-xs font-bold uppercase tracking-wider lg:flex">
           <a className="transition hover:text-[#b1832f]" href="#products">
             {t("Products")}
@@ -734,6 +740,7 @@ export default function App() {
             {t("Our standard")}
           </a>
         </div>
+
         <div className="flex items-center gap-2 sm:gap-3">
           <div
             className="flex rounded-full border border-[#10263f]/15 bg-white/35 p-1"
@@ -772,7 +779,7 @@ export default function App() {
         </div>
       </nav>
 
-      {/* Hero Header with Relaxed, Readable Line Spacing */}
+      {/* Hero Header with Comfortable Line Spacing */}
       <header className="mx-auto grid max-w-7xl gap-8 px-5 pb-16 pt-10 sm:px-8 md:grid-cols-[1.05fr_.95fr] md:items-end md:pt-16 lg:px-10 lg:pb-20">
         <div>
           <p className="mb-5 flex items-center gap-3 text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#b1832f]">
@@ -882,7 +889,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Insights Section with Comfortable Line Height */}
+      {/* Insights Section */}
       <section
         id="insights"
         className="mx-auto max-w-7xl px-5 pt-16 sm:px-8 lg:px-10 lg:pt-20"
@@ -972,7 +979,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Company Profile Section with Enhanced Paragraph Spacing */}
+      {/* Company Profile Section */}
       <section
         id="company"
         className="mx-auto max-w-7xl px-5 pt-16 sm:px-8 lg:px-10 lg:pt-20"
@@ -1157,7 +1164,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Direct Bulk Contact Section */}
+      {/* Direct Contact Section */}
       <section id="contact" className="bg-[#112a46] text-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-10">
           <div>
