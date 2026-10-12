@@ -419,7 +419,7 @@ function ProductCard({
   }, [product.name]);
 
   return (
-    <article className="group overflow-hidden rounded-[1.75rem] border border-black/10 bg-[#112a46] text-white">
+    <article className="group overflow-hidden rounded-[1.75rem] border border-black/10 bg-[#112a46] text-white shadow-md">
       <div className="h-64 overflow-hidden bg-black/5 sm:h-80">
         <img
           src={product.image}
@@ -427,7 +427,7 @@ function ProductCard({
           className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
         />
       </div>
-      <div className="p-5 sm:p-6">
+      <div className="p-6 sm:p-7">
         <div className="mb-4 flex items-center justify-between">
           <span className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-60">
             {product.eyebrow}
@@ -440,10 +440,11 @@ function ProductCard({
             {t("Bulk orders · LINE")} <ArrowIcon />
           </button>
         </div>
-        <h3 className="font-display text-[2rem] leading-none sm:text-[2.35rem]">
+        <h3 className="font-display text-[2rem] leading-tight sm:text-[2.35rem]">
           {product.name}
         </h3>
-        <p className="mt-3 text-sm leading-6 opacity-75">{product.description}</p>
+        {/* Adjusted relaxed line spacing for product description */}
+        <p className="mt-3 text-sm leading-relaxed text-slate-200 opacity-90">{product.description}</p>
         <div className="mt-5 grid grid-rows-[1fr]">
           <div className="overflow-hidden">
             <ul className="flex flex-wrap gap-2 border-t border-current/20 pt-4">
@@ -515,7 +516,7 @@ function ProductCard({
                       />
                     </div>
                     <p className="text-xs font-extrabold">{variant.name}</p>
-                    <p className="mt-1 text-[9px] leading-3.5 opacity-60">
+                    <p className="mt-1 text-[9px] leading-relaxed opacity-70">
                       {variant.format}
                     </p>
                     <div className="mt-2 border-t border-white/10 pt-2">
@@ -553,7 +554,7 @@ function ProductCard({
                   <span className="block text-[10px] font-extrabold uppercase tracking-[0.1em] text-[#f4c95d]">
                     {t("Buying in bulk?")}
                   </span>
-                  <span className="mt-1 block text-[9px] text-white/55">
+                  <span className="mt-1 block text-[9px] leading-relaxed text-white/60">
                     {t("Contact us directly on LINE for volume availability.")}
                   </span>
                 </span>
@@ -568,7 +569,7 @@ function ProductCard({
                 {product.specifications.map(({ label, value }) => (
                   <div
                     key={label}
-                    className="grid grid-cols-[.9fr_1.4fr] gap-3 py-3 text-xs"
+                    className="grid grid-cols-[.9fr_1.4fr] gap-3 py-3 text-xs leading-relaxed"
                   >
                     <dt className="font-semibold text-white/50">{label}</dt>
                     <dd className="font-bold leading-5 text-white">{value}</dd>
@@ -576,7 +577,7 @@ function ProductCard({
                 ))}
               </dl>
             </div>
-            <div className="mt-4 rounded-2xl border border-white/15 bg-white/10 p-4">
+            <div className="mt-4 rounded-2xl border border-white/15 bg-white/10 p-5">
               <div className="flex items-start gap-3">
                 <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-[#f4c95d] text-[#112a46]">
                   <svg
@@ -601,7 +602,7 @@ function ProductCard({
                   <h4 className="mt-1 text-sm font-extrabold">
                     {product.rawMaterial.name}
                   </h4>
-                  <p className="mt-2 text-[11px] leading-5 opacity-70">
+                  <p className="mt-2 text-[11px] leading-relaxed opacity-80">
                     {product.rawMaterial.details}
                   </p>
                 </div>
@@ -612,7 +613,7 @@ function ProductCard({
                     <dt className="text-[9px] font-extrabold uppercase tracking-[0.12em] text-[#f4c95d]">
                       {label}
                     </dt>
-                    <dd className="text-[10px] leading-[1.15rem] text-white/70">
+                    <dd className="text-[10px] leading-relaxed text-white/75">
                       {value}
                     </dd>
                   </div>
@@ -624,7 +625,7 @@ function ProductCard({
                     <p className="text-[9px] font-extrabold uppercase tracking-[0.16em] text-[#f4c95d]">
                       {t("Typical production procedure")}
                     </p>
-                    <p className="mt-1 text-[9px] leading-4 text-white/45">
+                    <p className="mt-1 text-[9px] leading-relaxed text-white/50">
                       {t("From primary material to finished, sealed product")}
                     </p>
                   </div>
@@ -648,14 +649,14 @@ function ProductCard({
                         <h5 className="text-[11px] font-extrabold">
                           {step.title}
                         </h5>
-                        <p className="mt-1 text-[10px] leading-[1.15rem] text-white/60">
+                        <p className="mt-1 text-[10px] leading-relaxed text-white/70">
                           {step.details}
                         </p>
                       </div>
                     </li>
                   ))}
                 </ol>
-                <p className="mt-4 rounded-xl border border-[#f4c95d]/20 bg-[#f4c95d]/10 px-3 py-2.5 text-[9px] leading-4 text-white/60">
+                <p className="mt-4 rounded-xl border border-[#f4c95d]/20 bg-[#f4c95d]/10 px-3 py-2.5 text-[9px] leading-relaxed text-white/70">
                   {t(
                     "The exact procedure and product specification may vary by product grade, equipment, recipe, and regulatory requirements.",
                   )}
@@ -695,22 +696,29 @@ export default function App() {
 
   return (
     <main className="min-h-screen bg-[#f4ecdf] text-[#10263f]">
+      {/* Navigation Bar with Logo Image and Clean Line Spacing */}
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
-        <a href="#" className="flex items-center gap-3" aria-label="Shwe Thailand home">
-          <span className="flex size-9 items-center justify-center rounded-full bg-[#112a46] text-[#f4c95d]">
-            <svg aria-hidden="true" className="size-5" fill="none" viewBox="0 0 24 24">
-              <path
-                d="M12 20V9m0 4c-4.5 0-7-2.5-7-7 4.5 0 7 2.5 7 7Zm0 3c4.5 0 7-2.5 7-7-4.5 0-7 2.5-7 7Z"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.5"
-              />
-            </svg>
-          </span>
-          <span className="hidden text-sm font-extrabold uppercase tracking-[0.18em] sm:inline">
-            Shwe Thailand
-          </span>
+        <a href="#" className="flex items-center gap-3.5" aria-label="Shwe Thailand home">
+          <div className="relative flex size-10 items-center justify-center overflow-hidden rounded-xl bg-[#112a46] shadow-sm">
+            <img
+              src="/logo.png"
+              alt="Shwe (Thailand) Co., Ltd. Logo"
+              className="h-8 w-8 object-contain"
+              onError={(e) => {
+                // Graceful fallback to branded letter icon if logo.png hasn't been uploaded yet
+                e.currentTarget.style.display = "none";
+                e.currentTarget.parentElement!.innerHTML = '<span class="font-extrabold text-amber-400 text-lg">S</span>';
+              }}
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-sm font-extrabold uppercase tracking-[0.16em] text-[#112a46] leading-snug">
+              Shwe Thailand
+            </span>
+            <span className="text-[10px] font-semibold tracking-wide text-[#657080] leading-none">
+              Commercial Export Portal
+            </span>
+          </div>
         </a>
         <div className="hidden items-center gap-8 text-xs font-bold uppercase tracking-wider lg:flex">
           <a className="transition hover:text-[#b1832f]" href="#products">
@@ -764,20 +772,21 @@ export default function App() {
         </div>
       </nav>
 
+      {/* Hero Header with Relaxed, Readable Line Spacing */}
       <header className="mx-auto grid max-w-7xl gap-8 px-5 pb-16 pt-10 sm:px-8 md:grid-cols-[1.05fr_.95fr] md:items-end md:pt-16 lg:px-10 lg:pb-20">
         <div>
           <p className="mb-5 flex items-center gap-3 text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#b1832f]">
             <span className="h-px w-8 bg-current" />
             {t("Three export commodities. One trusted brand.")}
           </p>
-          <h1 className="font-display max-w-3xl text-[clamp(3.5rem,8vw,7.5rem)] leading-[0.84] tracking-[-0.045em]">
+          <h1 className="font-display max-w-3xl text-[clamp(3.5rem,8vw,7.5rem)] leading-[0.88] tracking-[-0.04em]">
             {t("Good things,")}
             <br />
             <span className="italic text-[#c3973d]">{t("naturally.")}</span>
           </h1>
         </div>
         <div className="md:max-w-md md:justify-self-end">
-          <p className="text-base leading-7 text-[#536172] sm:text-lg">
+          <p className="text-base leading-relaxed text-[#536172] sm:text-lg">
             {t(
               "An informational catalog of finished export commodities for wholesale buyers and retail distribution.",
             )}
@@ -791,6 +800,7 @@ export default function App() {
         </div>
       </header>
 
+      {/* Product Section */}
       <section id="products" className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="mb-12">
           <div className="mb-3 flex items-center justify-between gap-4">
@@ -819,11 +829,11 @@ export default function App() {
             <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#b1832f]">
               {t("Product information")}
             </p>
-            <h2 className="font-display mt-2 text-3xl sm:text-4xl">
+            <h2 className="font-display mt-2 text-3xl sm:text-4xl leading-tight">
               {t("Export commodity catalog")}
             </h2>
           </div>
-          <p className="hidden max-w-xs text-right text-xs leading-5 text-[#657080] sm:block">
+          <p className="hidden max-w-xs text-right text-xs leading-relaxed text-[#657080] sm:block">
             {t("Select a tab to view product types, raw materials, and procedures.")}
           </p>
         </div>
@@ -853,7 +863,7 @@ export default function App() {
                 {product.shortName}
               </span>
               <span
-                className={`mt-1 block text-[9px] leading-4 ${
+                className={`mt-1 block text-[9px] leading-relaxed ${
                   safeActiveProduct === index ? "text-white/55" : "text-[#657080]"
                 }`}
               >
@@ -872,6 +882,7 @@ export default function App() {
         </div>
       </section>
 
+      {/* Insights Section with Comfortable Line Height */}
       <section
         id="insights"
         className="mx-auto max-w-7xl px-5 pt-16 sm:px-8 lg:px-10 lg:pt-20"
@@ -887,7 +898,7 @@ export default function App() {
               {t("& benefits.")}
             </h2>
           </div>
-          <p className="max-w-xl text-sm leading-7 text-[#536172] md:justify-self-end">
+          <p className="max-w-xl text-sm leading-relaxed text-[#536172] md:justify-self-end">
             {t(
               "Learn what makes our plum-seed bio-carbon distinctive, discover snack ideas using coconut milk, and understand the role of our iodized food-grade salt.",
             )}
@@ -916,7 +927,7 @@ export default function App() {
                     className="h-full w-full object-cover transition duration-700 hover:scale-105"
                   />
                 </div>
-                <div className="p-5">
+                <div className="p-6">
                   <p
                     className={`text-[9px] font-extrabold uppercase tracking-[0.18em] ${
                       expanded ? "text-[#f4c95d]" : "text-[#a47622]"
@@ -927,7 +938,7 @@ export default function App() {
                   <h3 className="font-display mt-2 text-2xl leading-tight">
                     {article.title}
                   </h3>
-                  <p className={`mt-3 text-xs leading-6 ${expanded ? "text-white/65" : "text-[#657080]"}`}>
+                  <p className={`mt-3 text-xs leading-relaxed ${expanded ? "text-white/75" : "text-[#657080]"}`}>
                     {article.excerpt}
                   </p>
                   <div
@@ -935,7 +946,7 @@ export default function App() {
                       expanded ? "mt-3 grid-rows-[1fr]" : "grid-rows-[0fr]"
                     }`}
                   >
-                    <p className="overflow-hidden text-[11px] leading-5 text-white/65">
+                    <p className="overflow-hidden text-[11px] leading-relaxed text-white/75">
                       {article.body}
                     </p>
                   </div>
@@ -961,6 +972,7 @@ export default function App() {
         </div>
       </section>
 
+      {/* Company Profile Section with Enhanced Paragraph Spacing */}
       <section
         id="company"
         className="mx-auto max-w-7xl px-5 pt-16 sm:px-8 lg:px-10 lg:pt-20"
@@ -982,17 +994,17 @@ export default function App() {
               <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#a47622]">
                 {t("Company profile")}
               </p>
-              <h2 className="font-display mt-3 text-4xl leading-[1.05] sm:text-5xl">
+              <h2 className="font-display mt-3 text-4xl leading-[1.08] sm:text-5xl">
                 {t("From product")}
                 <br />
                 {t("to shelf.")}
               </h2>
-              <p className="mt-6 max-w-xl text-sm leading-7 text-[#45566a] sm:text-base">
+              <p className="mt-6 max-w-xl text-sm leading-relaxed text-[#45566a] sm:text-base">
                 {t(
                   "Shwe Thailand offers a focused range of fully finished, packaged products for retail and wholesale buyers. Every item is supplied in its final pack, ready for resale and use.",
                 )}
               </p>
-              <p className="mt-4 max-w-xl text-sm leading-7 text-[#45566a]">
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#45566a]">
                 {t(
                   "Our compact product portfolio allows us to maintain clear product information, consistent specifications, and dependable export order coordination.",
                 )}
@@ -1100,7 +1112,7 @@ export default function App() {
                     className="rounded-2xl border border-black/10 bg-white/35 p-4"
                   >
                     <h3 className="text-xs font-extrabold">{t(title)}</h3>
-                    <p className="mt-2 text-[11px] leading-5 text-[#5d6876]">
+                    <p className="mt-2 text-[11px] leading-relaxed text-[#5d6876]">
                       {t(copy)}
                     </p>
                   </div>
@@ -1111,6 +1123,7 @@ export default function App() {
         </div>
       </section>
 
+      {/* Quality Section */}
       <section
         id="quality"
         className="mx-auto grid max-w-7xl gap-6 px-5 py-16 sm:px-8 md:grid-cols-[.85fr_1.15fr] md:items-center lg:px-10 lg:py-20"
@@ -1136,7 +1149,7 @@ export default function App() {
               <p className="mt-2 text-xs font-bold leading-5 sm:text-sm">
                 {t(label)}
               </p>
-              <p className="mt-1 hidden text-[11px] leading-5 text-[#687382] sm:block">
+              <p className="mt-1 hidden text-[11px] leading-relaxed text-[#687382] sm:block">
                 {t(description)}
               </p>
             </div>
@@ -1144,16 +1157,17 @@ export default function App() {
         </div>
       </section>
 
+      {/* Direct Bulk Contact Section */}
       <section id="contact" className="bg-[#112a46] text-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-10">
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/55">
               {t("Wholesale · Retail")}
             </p>
-            <h2 className="font-display mt-2 text-4xl sm:text-5xl">
+            <h2 className="font-display mt-2 text-4xl sm:text-5xl leading-tight">
               {t("Buying in bulk?")}
             </h2>
-            <p className="mt-2 text-sm text-white/55">
+            <p className="mt-2 text-sm leading-relaxed text-white/65">
               {t("Contact us directly on LINE for larger-volume orders.")}
             </p>
           </div>
@@ -1181,6 +1195,7 @@ export default function App() {
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="bg-[#112a46] px-5 pb-7 text-white/45 sm:px-8 lg:px-10">
         <div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-2 border-t border-white/15 pt-5 text-[10px] font-semibold uppercase tracking-wider">
           <span className="normal-case tracking-normal">
@@ -1194,6 +1209,7 @@ export default function App() {
         </div>
       </footer>
 
+      {/* PDF Modal */}
       {activeDocument && (
         <ModalShell
           title={t(activeDocument.label)}
@@ -1208,7 +1224,7 @@ export default function App() {
             />
           </div>
           <div className="flex items-center justify-between gap-4 border-t border-[#112a46]/10 px-5 py-3">
-            <p className="text-[9px] leading-4 text-[#657080]">
+            <p className="text-[9px] leading-relaxed text-[#657080]">
               {t("PDF preview · Use the viewer controls to zoom or print.")}
             </p>
             <a
@@ -1223,6 +1239,7 @@ export default function App() {
         </ModalShell>
       )}
 
+      {/* LINE QR Modal */}
       {lineQrOpen && (
         <ModalShell
           title={t("Contact on LINE")}
@@ -1236,12 +1253,12 @@ export default function App() {
             <h3 className="font-display mt-6 text-3xl text-[#112a46]">
               {t("Scan to connect")}
             </h3>
-            <p className="mx-auto mt-3 max-w-sm text-xs leading-6 text-[#657080]">
+            <p className="mx-auto mt-3 max-w-sm text-xs leading-relaxed text-[#657080]">
               {t(
                 "This is a visual placeholder for the official Shwe Thailand LINE QR code.",
               )}
             </p>
-            <p className="mt-4 rounded-xl bg-[#f4c95d]/25 px-4 py-3 text-[10px] font-bold leading-5 text-[#795a1e]">
+            <p className="mt-4 rounded-xl bg-[#f4c95d]/25 px-4 py-3 text-[10px] font-bold leading-relaxed text-[#795a1e]">
               {t(
                 "Not scannable yet — replace this placeholder with the official LINE QR image or add-friend link.",
               )}
