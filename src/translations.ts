@@ -10,8 +10,8 @@ const my: Dictionary = {
   "Contact on LINE": "LINE မှ ဆက်သွယ်ရန်",
   "Three export commodities. One trusted brand.":
     "ပို့ကုန်သုံးမျိုး၊ ယုံကြည်ရသော အမှတ်တံဆိပ်တစ်ခု။",
-  "Good things,": "ကောင်းမွန်သောအရာများ၊",
-  "naturally.": "သဘာဝအတိုင်း။",
+  "Good things,": "သဘာဝအတိုင်း၊",
+  "naturally.": "ကောင်းမွန်သောအရာများ။",
   "An informational catalog of finished export commodities for wholesale buyers and retail distribution.":
     "လက်ကားဝယ်ယူသူများနှင့် လက်လီဖြန့်ချိရေးအတွက် အသင့်ထုတ်လုပ်ပြီးသော ပို့ကုန်ပစ္စည်းများ၏ အချက်အလက်ကတ်တလောက်။",
   "Explore our range": "ထုတ်ကုန်များကို လေ့လာရန်",
