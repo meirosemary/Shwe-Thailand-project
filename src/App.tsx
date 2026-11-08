@@ -697,13 +697,13 @@ export default function App() {
     <main className="min-h-screen bg-[#f4ecdf] text-[#10263f]">
       {/* Navigation Bar */}
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
-        <a href="#" className="flex items-center gap-3.5" aria-label="Shwe Thailand home">
-          {/* Logo container: renders logo.png if present, otherwise displays the circular leaf emblem */}
-          <div className="flex size-10 items-center justify-center overflow-hidden rounded-full bg-[#112a46] text-[#f4c95d] shadow-sm">
+       <a href="#" className="flex items-center gap-4" aria-label="Shwe Thailand home">
+          {/* Logo container: enlarged with no outer frame or circle */}
+          <div className="flex items-center justify-center">
             <img
               src="/logo.png"
               alt="Shwe Thailand Logo"
-              className="h-8 w-8 object-contain"
+              className="h-16 w-auto object-contain"
               onError={(e) => {
                 e.currentTarget.style.display = "none";
                 const fallback = e.currentTarget.parentElement?.querySelector(".fallback-brand-icon");
@@ -711,7 +711,7 @@ export default function App() {
               }}
             />
             <svg
-              className="fallback-brand-icon hidden size-5"
+              className="fallback-brand-icon hidden size-10 text-[#112a46]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -720,11 +720,10 @@ export default function App() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 21V9m0 4c-4.5 0-7-2.5-7-7 4.5 0 7 2.5 7 7Zm0 3c4.5 0 7-2.5 7-7-4.5 0-7 2.5-7 7Z" />
             </svg>
           </div>
-          <span className="text-sm font-extrabold uppercase tracking-[0.18em] text-[#112a46]">
+          <span className="text-base font-extrabold uppercase tracking-[0.18em] text-[#112a46]">
             SHWE THAILAND
           </span>
         </a>
-
         <div className="hidden items-center gap-8 text-xs font-bold uppercase tracking-wider lg:flex">
           <a className="transition hover:text-[#b1832f]" href="#products">
             {t("Products")}
