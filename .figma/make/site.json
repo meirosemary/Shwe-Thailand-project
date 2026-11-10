@@ -1,7 +1,8 @@
 {
-  "description": "Showcase three product categories—salt, coconut milk, and charcoal—on a compact, user-friendly website designed for easy navigation and information access.",
+  "title": "Shwe (Thailand) Co., Ltd.",
+  "description": "Official commercial export catalog for Shwe (Thailand) Co., Ltd. — Bio-Carbon & Charcoal, Coconut Milk, and Mineral Salts.",
   "robots": {
-    "index": false
+    "index": true
   },
   "accessibility": {
     "addBypassLinks": false,
