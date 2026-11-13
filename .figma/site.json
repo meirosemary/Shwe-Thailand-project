@@ -1,0 +1,11 @@
+{
+  "title": "Shwe (Thailand) Co., Ltd.",
+  "description": "Official commercial export catalog for Shwe (Thailand) Co., Ltd. — Bio-Carbon & Charcoal, Coconut Milk, and Mineral Salts.",
+  "robots": {
+    "index": true
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
